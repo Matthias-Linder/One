@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UnoGame.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="Gray">
+    <StackLayout
+        Padding="5"
+        BackgroundColor="Gray"
+        VerticalOptions="CenterAndExpand">
+        <FlexLayout>
+            <Image
+                Margin="5,5,20,5"
+                Source="ai.jpg"
+                WidthRequest="250" />
+            <StackLayout>
+                <Label
+                    Padding="1,50,1,1"
+                    FontSize="18"
+                    Text="Your Opponent: AI"
+                    TextColor="Black" />
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        FontSize="20"
+                        Text="Cards left:"
+                        TextColor="Black" />
+                    <Label
+                        x:Name="cardsLeftAi"
+                        FontSize="20"
+                        Text="xx"
+                        TextColor="Black" />
+                </StackLayout>
+            </StackLayout>
+        </FlexLayout>
+        <StackLayout
+            Margin="0,20,0,0"
+            HorizontalOptions="CenterAndExpand"
+            Orientation="Horizontal">
+            <Image
+                x:Name="currentCardContainer"
+                HeightRequest="250"
+                Source="blue_one.png" />
+            <ImageButton
+                x:Name="drawCardButton"
+                Margin="20,0,0,0"
+                Clicked="DrawCard"
+                HeightRequest="250"
+                Source="back.png" />
+        </StackLayout>
+
+        <ScrollView
+            x:Name="scrollPlayerCards"
+            Margin="0,70,0,0"
+            IsTabStop="False"
+            Orientation="Horizontal">
+            <StackLayout x:Name="playerCardContainer" Orientation="Horizontal" />
+
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

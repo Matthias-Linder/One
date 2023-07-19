@@ -1,0 +1,142 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <ProduceReferenceAssemblyInOutDir>true</ProduceReferenceAssemblyInOutDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="UnoCardTextures\blue_eight.png" />
+    <None Remove="UnoCardTextures\blue_five.png" />
+    <None Remove="UnoCardTextures\blue_four.png" />
+    <None Remove="UnoCardTextures\blue_nine.png" />
+    <None Remove="UnoCardTextures\blue_one.png" />
+    <None Remove="UnoCardTextures\blue_plustwo.png" />
+    <None Remove="UnoCardTextures\blue_reverse.png" />
+    <None Remove="UnoCardTextures\blue_seven.png" />
+    <None Remove="UnoCardTextures\blue_six.png" />
+    <None Remove="UnoCardTextures\blue_skip.png" />
+    <None Remove="UnoCardTextures\blue_three.png" />
+    <None Remove="UnoCardTextures\blue_two.png" />
+    <None Remove="UnoCardTextures\blue_zero.png" />
+    <None Remove="UnoCardTextures\green_eight.png" />
+    <None Remove="UnoCardTextures\green_five.png" />
+    <None Remove="UnoCardTextures\green_four.png" />
+    <None Remove="UnoCardTextures\green_nine.png" />
+    <None Remove="UnoCardTextures\green_one.png" />
+    <None Remove="UnoCardTextures\green_plustwo.png" />
+    <None Remove="UnoCardTextures\green_reverse.png" />
+    <None Remove="UnoCardTextures\green_seven.png" />
+    <None Remove="UnoCardTextures\green_six.png" />
+    <None Remove="UnoCardTextures\green_skip.png" />
+    <None Remove="UnoCardTextures\green_three.png" />
+    <None Remove="UnoCardTextures\green_two.png" />
+    <None Remove="UnoCardTextures\green_zero.png" />
+    <None Remove="UnoCardTextures\red_eight.png" />
+    <None Remove="UnoCardTextures\red_five.png" />
+    <None Remove="UnoCardTextures\red_four.png" />
+    <None Remove="UnoCardTextures\red_nine.png" />
+    <None Remove="UnoCardTextures\red_one.png" />
+    <None Remove="UnoCardTextures\red_plustwo.png" />
+    <None Remove="UnoCardTextures\red_reverse.png" />
+    <None Remove="UnoCardTextures\red_seven.png" />
+    <None Remove="UnoCardTextures\red_six.png" />
+    <None Remove="UnoCardTextures\red_skip.png" />
+    <None Remove="UnoCardTextures\red_three.png" />
+    <None Remove="UnoCardTextures\red_two.png" />
+    <None Remove="UnoCardTextures\red_zero.png" />
+    <None Remove="UnoCardTextures\wild.png" />
+    <None Remove="UnoCardTextures\wildplusfour.png" />
+    <None Remove="UnoCardTextures\yellow_eight.png" />
+    <None Remove="UnoCardTextures\yellow_five.png" />
+    <None Remove="UnoCardTextures\yellow_four.png" />
+    <None Remove="UnoCardTextures\yellow_nine.png" />
+    <None Remove="UnoCardTextures\yellow_one.png" />
+    <None Remove="UnoCardTextures\yellow_plustwo.png" />
+    <None Remove="UnoCardTextures\yellow_reverse.png" />
+    <None Remove="UnoCardTextures\yellow_seven.png" />
+    <None Remove="UnoCardTextures\yellow_six.png" />
+    <None Remove="UnoCardTextures\yellow_skip.png" />
+    <None Remove="UnoCardTextures\yellow_three.png" />
+    <None Remove="UnoCardTextures\yellow_two.png" />
+    <None Remove="UnoCardTextures\yellow_zero.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="UnoCardTextures\blue_eight.png" />
+    <EmbeddedResource Include="UnoCardTextures\blue_five.png" />
+    <EmbeddedResource Include="UnoCardTextures\blue_four.png" />
+    <EmbeddedResource Include="UnoCardTextures\blue_nine.png" />
+    <EmbeddedResource Include="UnoCardTextures\blue_one.png" />
+    <EmbeddedResource Include="UnoCardTextures\blue_plustwo.png" />
+    <EmbeddedResource Include="UnoCardTextures\blue_reverse.png" />
+    <EmbeddedResource Include="UnoCardTextures\blue_seven.png" />
+    <EmbeddedResource Include="UnoCardTextures\blue_six.png" />
+    <EmbeddedResource Include="UnoCardTextures\blue_skip.png" />
+    <EmbeddedResource Include="UnoCardTextures\blue_three.png" />
+    <EmbeddedResource Include="UnoCardTextures\blue_two.png" />
+    <EmbeddedResource Include="UnoCardTextures\blue_zero.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_eight.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_five.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_four.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_nine.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_one.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_plustwo.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_reverse.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_seven.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_six.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_skip.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_three.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_two.png" />
+    <EmbeddedResource Include="UnoCardTextures\green_zero.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_eight.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_five.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_four.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_nine.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_one.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_plustwo.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_reverse.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_seven.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_six.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_skip.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_three.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_two.png" />
+    <EmbeddedResource Include="UnoCardTextures\red_zero.png" />
+    <EmbeddedResource Include="UnoCardTextures\wild.png" />
+    <EmbeddedResource Include="UnoCardTextures\wildplusfour.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_eight.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_five.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_four.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_nine.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_one.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_plustwo.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_reverse.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_seven.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_six.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_skip.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_three.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_two.png" />
+    <EmbeddedResource Include="UnoCardTextures\yellow_zero.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v13.0\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\Xamarin.iOS\v1.0\Xamarin.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
