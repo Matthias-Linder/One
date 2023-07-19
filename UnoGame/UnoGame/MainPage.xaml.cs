@@ -114,6 +114,7 @@ namespace UnoGame
                     {
                         card.setOpacity(0.2);
                         card.setButtonEnabled(false);
+                        card.getImageButton().IsEnabled = false;
                         drawCardButton.IsEnabled = false;
                     }
                 }
