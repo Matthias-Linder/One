@@ -17,7 +17,7 @@
                 <Label
                     Padding="1,50,1,1"
                     FontSize="18"
-                    Text="Your Opponent: AI"
+                    Text="Your Opponent: Computer"
                     TextColor="Black" />
                 <StackLayout Orientation="Horizontal">
                     <Label

@@ -360,7 +360,7 @@ namespace UnoGame
             Button blue = new Button
             {
                 BackgroundColor = Color.Blue,
-                TextColor = Color.Black,
+                TextColor = Color.White,
                 Text = "Blue",
             };
 
