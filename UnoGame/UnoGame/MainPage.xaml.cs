@@ -1,4 +1,5 @@
-﻿using Java.Lang;
+﻿using Android.Graphics.Fonts;
+using Java.Lang;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,6 +19,11 @@ namespace UnoGame
         PlayerModel player;
 
         PlayerModel ai;
+
+        Color MainRed = Color.FromRgba(0xa3, 0x00, 0x00, 0xfe);
+        Color MainYellow = Color.FromRgba(0xe1,0xc7,0x09,0xfe);
+        Color MainGreen = Color.FromRgba(0x23,0xb4,0x1f,0xfe);
+        Color MainBlue = Color.FromRgba(0x1e,0x00,0x82,0xfe);
 
         UnoGame game = new UnoGame();
 
@@ -339,30 +345,46 @@ namespace UnoGame
 
             Button red = new Button
             {
-                BackgroundColor = Color.Red,
-                TextColor = Color.Black,
+                BackgroundColor = MainRed,
+                TextColor = Color.White,
+                FontSize = 20,
+                FontFamily = "AgencyFB",
                 Text = "Red",
+                HeightRequest = 70,
+                WidthRequest = 70,
             };
 
             Button yellow = new Button
             {
-                BackgroundColor = Color.Yellow,
-                TextColor = Color.Black,
+                BackgroundColor = MainYellow,
+                TextColor = Color.White,
+                FontSize = 20,
+                FontFamily = "AgencyFB",
                 Text = "Yellow",
+                HeightRequest = 70,
+                WidthRequest = 70,
             };
 
             Button green = new Button
             {
-                BackgroundColor = Color.Green,
-                TextColor = Color.Black,
+                BackgroundColor = MainGreen,
+                TextColor = Color.White,
+                FontSize = 20,
+                FontFamily = "AgencyFB",
                 Text = "Green",
+                HeightRequest = 70,
+                WidthRequest = 70,
             };
 
             Button blue = new Button
             {
-                BackgroundColor = Color.Blue,
+                BackgroundColor = MainBlue,
                 TextColor = Color.White,
+                FontSize = 20,
+                FontFamily = "AgencyFB",
                 Text = "Blue",
+                HeightRequest = 70,
+                WidthRequest = 70,
             };
 
             red.Clicked += OnColorButtonClick;
@@ -376,19 +398,23 @@ namespace UnoGame
 
             colorSelectionDialog = new Popup()
             {
+
+                BackgroundColor = Color.Black,
                 //IsLightDismissEnabled = false,
 
-                Size = new Size(250, 180),
+                Size = new Size(250, 220),
 
                 Content = new StackLayout
                 {
-
+                    BackgroundColor = Color.Black,
                     Children =
                     {
                         new Label()
                         {
-                            TextColor = Color.Black,
+                            TextColor = Color.White,
+                            FontFamily = "AgencyFB",
                             Text = "Select a Color",
+                            FontSize = 28,
                             HorizontalOptions = LayoutOptions.Center,
                             VerticalOptions = LayoutOptions.Center,
                         },
@@ -412,8 +438,8 @@ namespace UnoGame
                                 {
                                     Children =
                                     {
-                                        green,
-                                        blue
+                                        blue,
+                                        green
                                     }
                                 }
                             }
@@ -433,9 +459,12 @@ namespace UnoGame
             
             if(!winDialogShown)
             {
-                Button restartButton = new Button
+                ImageButton restartButton = new ImageButton
                 {
-                    Text = "Restart",
+                    
+                    BackgroundColor = Color.FromRgba(0x37,0x37,0x37,0xfe),
+                    Source = "restart.png",
+                    WidthRequest = 140
                 };
 
                 restartButton.Clicked += RestartClick;
@@ -444,20 +473,23 @@ namespace UnoGame
                 {
                     IsLightDismissEnabled = false,
                     Size = new Size(200, 150),
+                    BackgroundColor = Color.Black,
                     Content = new StackLayout
                     {
+                        BackgroundColor = Color.Black,
                         Children =
-                    {
-                        new Label()
                         {
-                            TextColor = Color.Black,
-                            Text = winner,
-                            HorizontalOptions = LayoutOptions.Center,
-                            FontSize = 25,
-                            Margin = new Thickness(0,5,0,50)
-                        },
-                        restartButton
-                    }
+                            new Label()
+                            {
+                                TextColor = Color.White,
+                                FontFamily = "AgencyFB",
+                                Text = winner,
+                                HorizontalOptions = LayoutOptions.Center,
+                                FontSize = 25,
+                                Margin = new Thickness(0,5,0,50)
+                            },
+                            restartButton
+                        }
                     }
                 };
 
@@ -473,19 +505,19 @@ namespace UnoGame
         {
             int selectedColor = 0;
             Button button = sender as Button;
-            if(button.BackgroundColor == Color.Red)
+            if(button.BackgroundColor == MainRed)
             {
                 selectedColor = 1;
             }
-            else if (button.BackgroundColor == Color.Yellow)
+            else if (button.BackgroundColor == MainYellow)
             {
                 selectedColor= 2;
             }
-            else if(button.BackgroundColor == Color.Green)
+            else if(button.BackgroundColor == MainGreen)
             {
                 selectedColor = 3;
             }
-            else if(button.BackgroundColor == Color.Blue)
+            else if(button.BackgroundColor == MainBlue)
             {
                 selectedColor = 4;
             }

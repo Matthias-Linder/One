@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AGENCYR.TTF" />
     <None Remove="UnoCardTextures\blue_eight.png" />
     <None Remove="UnoCardTextures\blue_five.png" />
     <None Remove="UnoCardTextures\blue_four.png" />
@@ -69,6 +70,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="AGENCYR.TTF" />
     <EmbeddedResource Include="UnoCardTextures\blue_eight.png" />
     <EmbeddedResource Include="UnoCardTextures\blue_five.png" />
     <EmbeddedResource Include="UnoCardTextures\blue_four.png" />

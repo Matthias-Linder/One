@@ -3,35 +3,32 @@
     x:Class="UnoGame.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="Gray">
+    BackgroundColor="#323232">
     <StackLayout
         Padding="5"
-        BackgroundColor="Gray"
+        BackgroundColor="#3A3A3A"
         VerticalOptions="CenterAndExpand">
-        <FlexLayout>
-            <Image
-                Margin="5,5,20,5"
-                Source="ai.jpg"
-                WidthRequest="250" />
-            <StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="End">
+            <Label
+                Padding="1,50,1,1"
+                FontFamily="AgencyFB"
+                FontSize="23"
+                Text="Your Opponent: Computer"
+                TextColor="White" />
+            <StackLayout Orientation="Horizontal">
                 <Label
-                    Padding="1,50,1,1"
-                    FontSize="18"
-                    Text="Your Opponent: Computer"
-                    TextColor="Black" />
-                <StackLayout Orientation="Horizontal">
-                    <Label
-                        FontSize="20"
-                        Text="Cards left:"
-                        TextColor="Black" />
-                    <Label
-                        x:Name="cardsLeftAi"
-                        FontSize="20"
-                        Text="xx"
-                        TextColor="Black" />
-                </StackLayout>
+                    FontFamily="AgencyFB"
+                    FontSize="27"
+                    Text="Cards left:"
+                    TextColor="White" />
+                <Label
+                    x:Name="cardsLeftAi"
+                    FontFamily="AgencyFB"
+                    FontSize="27"
+                    Text="00"
+                    TextColor="White" />
             </StackLayout>
-        </FlexLayout>
+        </StackLayout>
         <StackLayout
             Margin="0,20,0,0"
             HorizontalOptions="CenterAndExpand"
