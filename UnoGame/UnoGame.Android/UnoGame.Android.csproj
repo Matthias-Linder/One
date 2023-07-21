@@ -50,6 +50,11 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidKeyStore>false</AndroidKeyStore>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -94,9 +99,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UnoGame\UnoGame.csproj">
-      <Project>{8E79EE52-D847-479E-87EB-5810EF794ED5}</Project>
-      <Name>UnoGame</Name>
+    <ProjectReference Include="..\UnoGame\One.csproj">
+      <Project>{AAD21731-CED5-42DF-A703-94FEBEDCF9AE}</Project>
+      <Name>One</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

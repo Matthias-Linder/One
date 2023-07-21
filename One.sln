@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoGame.Android", "UnoGame\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoGame.iOS", "UnoGame\UnoGame.iOS\UnoGame.iOS.csproj", "{E407D161-945F-410A-AFB0-5739BBD07A38}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnoGame", "UnoGame\UnoGame\UnoGame.csproj", "{AAD21731-CED5-42DF-A703-94FEBEDCF9AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "One", "UnoGame\UnoGame\One.csproj", "{AAD21731-CED5-42DF-A703-94FEBEDCF9AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
