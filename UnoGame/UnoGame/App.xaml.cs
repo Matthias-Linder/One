@@ -10,7 +10,12 @@ namespace UnoGame
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MainMenu();
+
+            Route.RegisterRoute("main", typeof(MainPage));
+            Route.RegisterRoute("menu", typeof(MainMenu));
+
+            Route.GoToAsync("menu");
         }
 
         protected override void OnStart()

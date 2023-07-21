@@ -8,25 +8,35 @@
         Padding="5"
         BackgroundColor="#3A3A3A"
         VerticalOptions="CenterAndExpand">
-        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="End">
-            <Label
-                Padding="1,50,1,1"
-                FontFamily="AgencyFB"
-                FontSize="23"
-                Text="Your Opponent: Computer"
-                TextColor="White" />
-            <StackLayout Orientation="Horizontal">
+        <StackLayout Orientation="Horizontal" />
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+            <ImageButton
+                Margin="15"
+                BackgroundColor="#3A3A3A"
+                Clicked="QuitClick"
+                HeightRequest="60"
+                Source="quit_game.png"
+                WidthRequest="60" />
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="End">
                 <Label
+                    Padding="1,1,1,1"
                     FontFamily="AgencyFB"
-                    FontSize="27"
-                    Text="Cards left:"
+                    FontSize="23"
+                    Text="Your Opponent: Computer"
                     TextColor="White" />
-                <Label
-                    x:Name="cardsLeftAi"
-                    FontFamily="AgencyFB"
-                    FontSize="27"
-                    Text="00"
-                    TextColor="White" />
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        FontFamily="AgencyFB"
+                        FontSize="27"
+                        Text="Cards left:"
+                        TextColor="White" />
+                    <Label
+                        x:Name="cardsLeftAi"
+                        FontFamily="AgencyFB"
+                        FontSize="27"
+                        Text="00"
+                        TextColor="White" />
+                </StackLayout>
             </StackLayout>
         </StackLayout>
         <StackLayout

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UnoGame.MainMenu"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <StackLayout
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                WidthRequest="300">
+                <Image Margin="-70" Source="back.png" />
+                <ImageButton
+                    Margin="0,0,0,5"
+                    BackgroundColor="#3A3A3A"
+                    Clicked="Start"
+                    HeightRequest="50"
+                    Source="start_menu.png" />
+                <ImageButton
+                    Margin="0,0,0,5"
+                    BackgroundColor="#3A3A3A"
+                    Clicked="Quit"
+                    HeightRequest="50"
+                    Source="quit_menu.png" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

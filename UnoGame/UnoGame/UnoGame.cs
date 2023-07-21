@@ -49,7 +49,7 @@ namespace UnoGame
 
             foreach (PlayerModel player in players)
             {
-                for (int i = 0; i <= 1; i++) //check
+                for (int i = 0; i < 7; i++) 
                 {
                     player.GiveCard(deck.DrawCard());
                 }

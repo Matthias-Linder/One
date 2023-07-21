@@ -1,13 +1,14 @@
-﻿using Android.Graphics.Fonts;
+﻿using Android.Content.Res;
 using Java.Lang;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using UIKit;
 using UnoGame.Models;
 using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
+using static Android.Graphics.BlurMaskFilter;
 
 namespace UnoGame
 {
@@ -21,9 +22,9 @@ namespace UnoGame
         PlayerModel ai;
 
         Color MainRed = Color.FromRgba(0xa3, 0x00, 0x00, 0xfe);
-        Color MainYellow = Color.FromRgba(0xe1,0xc7,0x09,0xfe);
-        Color MainGreen = Color.FromRgba(0x23,0xb4,0x1f,0xfe);
-        Color MainBlue = Color.FromRgba(0x1e,0x00,0x82,0xfe);
+        Color MainYellow = Color.FromRgba(0xe1, 0xc7, 0x09, 0xfe);
+        Color MainGreen = Color.FromRgba(0x23, 0xb4, 0x1f, 0xfe);
+        Color MainBlue = Color.FromRgba(0x1e, 0x00, 0x82, 0xfe);
 
         UnoGame game = new UnoGame();
 
@@ -87,11 +88,11 @@ namespace UnoGame
 
         private void Update()
         {
-            if(player.GetCardCount() == 0)
+            if (player.GetCardCount() == 0)
             {
                 PlayerWin();
             }
-            else if(ai.GetCardCount()==0)
+            else if (ai.GetCardCount() == 0)
             {
                 AIWin();
             }
@@ -131,7 +132,7 @@ namespace UnoGame
                         player.GiveCard(game.DrawCard());
                         player.GiveCard(game.DrawCard());
                         game.GetCurrentCard().drawnCards = true;
-                        
+
                         //draw 2 cards
                     }
                     if (game.GetCurrentCard().GetNumber() == -2 && !game.GetCurrentCard().drawnCards)
@@ -185,7 +186,7 @@ namespace UnoGame
                     }
                 }
             }
-            
+
 
 
         }
@@ -254,7 +255,7 @@ namespace UnoGame
                 }
                 game.nextPlayer();
             }
-            
+
         }
 
         private void DrawCard(object sender, EventArgs e)
@@ -316,7 +317,7 @@ namespace UnoGame
             double scroll = scrollPlayerCards.ScrollX;
             if (player.GetCardCount() != previousCardCount)
             {
-                
+
                 playerCardContainer.Children.Clear();
                 scrollPlayerCards.ScrollToAsync(scroll, 0, false);
                 foreach (CardModel card in player.GetCards())
@@ -339,6 +340,7 @@ namespace UnoGame
             ai = game.GetPlayerByIndex(AI_PLAYER);
         }
 
+        #region popups
         Popup colorSelectionDialog;
         private void ShowColorSelectionPopup()
         {
@@ -347,7 +349,7 @@ namespace UnoGame
             {
                 BackgroundColor = MainRed,
                 TextColor = Color.White,
-                FontSize = 20,
+                FontSize = 15,
                 FontFamily = "AgencyFB",
                 Text = "Red",
                 HeightRequest = 70,
@@ -358,7 +360,7 @@ namespace UnoGame
             {
                 BackgroundColor = MainYellow,
                 TextColor = Color.White,
-                FontSize = 20,
+                FontSize = 15,
                 FontFamily = "AgencyFB",
                 Text = "Yellow",
                 HeightRequest = 70,
@@ -369,7 +371,7 @@ namespace UnoGame
             {
                 BackgroundColor = MainGreen,
                 TextColor = Color.White,
-                FontSize = 20,
+                FontSize = 15,
                 FontFamily = "AgencyFB",
                 Text = "Green",
                 HeightRequest = 70,
@@ -380,7 +382,7 @@ namespace UnoGame
             {
                 BackgroundColor = MainBlue,
                 TextColor = Color.White,
-                FontSize = 20,
+                FontSize = 15,
                 FontFamily = "AgencyFB",
                 Text = "Blue",
                 HeightRequest = 70,
@@ -456,15 +458,16 @@ namespace UnoGame
         private void ShowWinPopup(string winner)
         {
 
-            
-            if(!winDialogShown)
+
+            if (!winDialogShown)
             {
                 ImageButton restartButton = new ImageButton
                 {
-                    
-                    BackgroundColor = Color.FromRgba(0x37,0x37,0x37,0xfe),
-                    Source = "restart.png",
-                    WidthRequest = 140
+
+                    BackgroundColor = Color.FromRgba(0x37, 0x37, 0x37, 0xfe),
+                    Source = "restart_game.png",
+                    HeightRequest = 40,
+                    Margin = new Thickness(20,0,20,10)
                 };
 
                 restartButton.Clicked += RestartClick;
@@ -474,8 +477,14 @@ namespace UnoGame
                     IsLightDismissEnabled = false,
                     Size = new Size(200, 150),
                     BackgroundColor = Color.Black,
+                    VerticalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.Center,
                     Content = new StackLayout
                     {
+                        Margin = new Thickness(5),
+                        VerticalOptions = LayoutOptions.Center,
+                        HorizontalOptions = LayoutOptions.Center,
+                        WidthRequest = 80,
                         BackgroundColor = Color.Black,
                         Children =
                         {
@@ -485,7 +494,7 @@ namespace UnoGame
                                 FontFamily = "AgencyFB",
                                 Text = winner,
                                 HorizontalOptions = LayoutOptions.Center,
-                                FontSize = 25,
+                                FontSize = 30,
                                 Margin = new Thickness(0,5,0,50)
                             },
                             restartButton
@@ -499,25 +508,88 @@ namespace UnoGame
             }
 
         }
-      
+        Popup quitPopup;
+        private void ShowQuitPopup()
+        {
+            Button quit = new Button
+            {
+                Text = "Yes",
+                TextColor = Color.White,
+                Margin = new Thickness(0,0,0,10),
+                FontFamily= "AgencyFB",
+                BackgroundColor = Color.FromRgb(0x3A,0x3A,0x3A)
+            };
+            Button cancel = new Button
+            {
+                Text = "Cancel",
+                TextColor = Color.White,
+                Margin = new Thickness(0, 0, 0, 10),
+                FontFamily = "AgencyFB",
+                BackgroundColor = Color.FromRgb(0x3A, 0x3A, 0x3A)
+            };
+            quit.Clicked += Quit;
+
+            cancel.Clicked += Quit;
+
+            quitPopup = new Popup()
+            {
+                BackgroundColor = Color.Black,
+
+                Size = new Size(250, 220),
+
+                Content = new StackLayout
+                {
+                    Padding = 5,
+                    BackgroundColor = Color.Black,
+                    Children =
+                    {
+                        new Label()
+                        {
+                            Padding = 5,
+                            TextColor = Color.White,
+                            FontFamily = "AgencyFB",
+                            Text = "Do you really want to exit?",
+                            FontSize = 28,
+                            HorizontalOptions = LayoutOptions.Center,
+                            VerticalOptions = LayoutOptions.Center,
+                            Margin = new Thickness(0,0,0,30)
+                        },
+                        new StackLayout
+                        {
+                            Orientation = StackOrientation.Horizontal,
+                            HorizontalOptions= LayoutOptions.CenterAndExpand,
+                            Children =
+                            {
+                                quit,
+                                cancel
+                            }
+                        },
+                        
+                    }
+                }
+            };
+            App.Current.MainPage.Navigation.ShowPopup(quitPopup);
+        }
+
+        #endregion
 
         private void OnColorButtonClick(object sender, EventArgs e)
         {
             int selectedColor = 0;
             Button button = sender as Button;
-            if(button.BackgroundColor == MainRed)
+            if (button.BackgroundColor == MainRed)
             {
                 selectedColor = 1;
             }
             else if (button.BackgroundColor == MainYellow)
             {
-                selectedColor= 2;
+                selectedColor = 2;
             }
-            else if(button.BackgroundColor == MainGreen)
+            else if (button.BackgroundColor == MainGreen)
             {
                 selectedColor = 3;
             }
-            else if(button.BackgroundColor == MainBlue)
+            else if (button.BackgroundColor == MainBlue)
             {
                 selectedColor = 4;
             }
@@ -551,6 +623,23 @@ namespace UnoGame
             game.Init(2);
             player = game.GetPlayerByIndex(REAL_PLAYER);
             ai = game.GetPlayerByIndex(AI_PLAYER);
+        }
+
+        private void Quit(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if(btn.Text == "Cancel")
+            {
+                quitPopup.Dismiss(null);
+                return;
+            }
+            quitPopup.Dismiss(null);
+            Route.GoToAsync("menu");
+        }
+
+        private void QuitClick(object sender, EventArgs e)
+        {
+            ShowQuitPopup();
         }
     }
 }
