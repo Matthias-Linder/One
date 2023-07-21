@@ -47,6 +47,7 @@ namespace UnoGame.Models
         int untilShuffle = 20;
         public void reAddCard(CardModel card)
         {
+            card.drawnCards = false;
             deck.Add(card);
             untilShuffle--;
             if (untilShuffle <= 0)
